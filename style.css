@@ -1,0 +1,29 @@
+.container {
+	margin-top: 20px;
+}
+
+.form-select {
+	display: inline;
+	width: 50%;
+}
+
+.time-control {
+	display: inline;
+	width: 25%;
+}
+
+.accept-button {
+	border: 1px solid #ced4da;
+	width: 20%;
+}
+
+.controls-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.date {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
