@@ -28,6 +28,17 @@ window.onload = function () {
 			}
 		}
 
+		function paintRows(actionToPaint, successHoursCount, actionResultRowId, reverse) {
+			const actionResultRow = document.querySelector(`#${actionResultRowId}`);
+			if (reverse ? actionToPaint.sumHours < successHoursCount : actionToPaint.sumHours >= successHoursCount) {
+				actionResultRow.classList.toggle("table-danger", false);
+				actionResultRow.classList.add("table-success");
+			} else {
+				actionResultRow.classList.toggle("table-success", false);
+				actionResultRow.classList.add("table-danger");
+			}
+		}
+
 		actions.forEach((action) => {
 			makeSum(action, allSum);
 
@@ -56,6 +67,11 @@ window.onload = function () {
 		formatingTime(foodSum);
 		formatingTime(restSum);
 		formatingTime(yukiSum);
+
+		paintRows(studySum, 4, "studyResultRow");
+		paintRows(workSum, 4, "workResulttRow");
+		paintRows(foodSum, 1, "foodResultRow", true);
+		paintRows(restSum, 1, "restResultRow", true);
 
 		const allResult = document.querySelector("#allResult");
 		const studyResult = document.querySelector("#studyResult");
